@@ -1,0 +1,55 @@
+
+.loginForm h2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    color: white;
+  }
+
+  .loginForm {
+    margin: 12% auto 15% auto;
+    width: 10%; 
+    color: white;
+    position: relative;
+  }
+
+
+
+  .loginForm form input{
+    border: none;
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #232B36;
+  }
+
+  .loginForm form button{
+    text-decoration: none;
+    background-color: white;
+    height: 30px;
+    width: 121px;
+    border: none;
+    color: #232B36;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 0.7em;
+    position: relative;
+    left: 60px;
+    /* display: none; */
+  }
+
+  .loginForm form input::placeholder{
+    opacity: 0.1;
+    color: white;
+  }
+

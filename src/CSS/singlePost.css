@@ -1,0 +1,42 @@
+
+  .singlePost {
+    grid-area: main;
+    position: relative;
+    background-color: #232B36;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 25% auto;
+    grid-template-areas: 
+        "title"
+        "content";
+
+    margin-top: 40px;
+  }
+  
+  .container {
+    margin-right: auto; 
+    margin-left:  auto;
+    text-align: justify;
+    width: 90%;
+    padding-right: 10px; 
+    padding-left:  10px;
+    color: white;
+  }
+
+  .container .title{
+    position: relative;
+    left: 33%;
+    right: 33%;
+    width: 600px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  .container h1{
+    font-size: 50px;
+
+  }
+
+  .container p{
+    font-size: 35px;
+  }

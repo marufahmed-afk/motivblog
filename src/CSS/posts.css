@@ -1,0 +1,98 @@
+
+  .mainBlog {
+    grid-area: main;
+    position: relative;
+    background-color: #232B36;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 25% auto;
+    grid-template-areas: 
+        "filters"
+        "posts";
+  }
+
+.filters{
+    grid-area: filters;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+.filters ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+  }
+
+.filters li{
+    display: inline;
+    padding: 10px 10px;
+    
+  }
+
+
+.filters li a {
+    padding: 0px 10px ;
+    color: #707070;
+    text-decoration: none;
+    font-size: 0.8em;
+
+    border: 1px;
+    border-style: solid;
+    border-color: white;
+    
+  }
+
+  .posts ul li {
+
+    text-decoration: none;
+    width: 500px;
+    height: 280px;
+    background-color: white;
+    position: relative;
+
+  }
+
+  .posts{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 25% auto;
+    grid-template-areas: 
+        "filters"
+        "posts";
+    margin-left: 46px;
+    margin-top: 30px;
+  }
+
+  .posts ul{
+    grid-area: posts;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 2em;
+    grid-row-gap: 2em;
+  }
+
+  .posts ul li img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s;
+  }
+
+  .posts ul li img:hover{
+    transform: scale(1.2);
+  }
+
+  .posts ul li span{
+    position: absolute;
+    top: 45%;
+    left: 12%;
+    text-align: center;
+    z-index: 1;
+    text-decoration: none;
+    color: white;
+  }
