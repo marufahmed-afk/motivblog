@@ -7,11 +7,11 @@ const SignedInLinks = (props) =>{
     return(
         <div className="navBar">
             <ul>
-                <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/blogs">Posts</NavLink></li>
-                <li><NavLink to="/profile">Profile</NavLink></li>
-                <li><NavLink to="/notifications">Notifications</NavLink></li>
-                <li><NavLink to="/login" className='login' onClick={props.signOut}>Logout</NavLink></li>
+                <li><NavLink to="/" activeClassName="null">Home</NavLink></li>
+                <li><NavLink to="/blogs" activeClassName="active">Posts</NavLink></li>
+                <li><NavLink to="/profile" activeClassName="active">Profile</NavLink></li>
+                <li><NavLink to="/notifications" activeClassName="active">Notifications</NavLink></li>
+                <li><NavLink to="/login" activeClassName="active" className='login' onClick={props.signOut}>Logout</NavLink></li>
             </ul>
         </div>
     )

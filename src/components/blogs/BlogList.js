@@ -9,6 +9,17 @@ import { Redirect } from 'react-router-dom'
 
 class BlogList extends Component {
 
+    state = {
+        filter: ''
+    }
+
+    handleFilter = (e) =>{
+        console.log(e.target.id)
+        this.setState({
+            filter: e.target.id
+        })
+    };
+
     render(){
     
     const { blogs, auth } = this.props;
@@ -18,9 +29,9 @@ class BlogList extends Component {
         <div>
             <div className="filters">
                 <ul>
-                    <li><Link to="#home">All</Link></li>
+                    <li ><a href='#' id = 'All' onClick = {this.handleFilter}>All</a></li>
                     <li><Link to="#date">Date</Link></li>
-                    <li><Link to="#liked">Liked</Link></li>
+                    <li ><a href='#' id = 'Liked' onClick = {this.handleFilter}>Liked</a></li>
                     <li><Link to="#rating">Rating</Link></li>
                 </ul>
             </div>
@@ -28,20 +39,28 @@ class BlogList extends Component {
             <div className="posts">
                 <ul>
                     { blogs && blogs.map(blog =>{
-                        {/* {console.log(blog)} */}
-                        return(
+                        if(this.state.filter === 'Liked'){
+                            if(blog.likes.length >= 1){
+                                return(
+                                <Link to={'/blogs/' + blog.id} key= {blog.id}>
+                                    <BlogCard blog={blog}/>
+                                </Link>
+                             )
+                            }
+                        }
+                        else {
+                            return(
                             
                             <Link to={'/blogs/' + blog.id} key= {blog.id}>
                                 <BlogCard blog={blog}/>
                             </Link>
                         )
+                        }
                     })}
                 </ul>
             </div>
         </div>
-
-    )
-
+        )
     }
     
 }

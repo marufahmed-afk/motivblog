@@ -29,9 +29,9 @@ function Profile(props) {
         <CreateBlog history={props.history}/>
         <div className="userInfo">
             <div className="user">
-                <Link to="" ><img className='user-img' src={user && user.url} alt="" /></Link>
+                <Link to="" ><img className='user-img' src={user && user.url || null} alt="" /></Link>
                 <section>
-                    <p id="name">{user && user.firstName } {user && user.lastName} </p>
+                    <p id="name">{user && user.firstName || 'NA' } {user && user.lastName || 'NA'} </p>
                     <p id="occupation">{user && user.occupation || 'NA'}</p>
                     <p id="email">{auth.email}</p>
                 </section>
@@ -44,10 +44,9 @@ function Profile(props) {
             </div>
 
             
-            <BlogShowcase/>
+            <BlogShowcase  blogs = {blogs}/>
         
         </div>
-
 
         <div className="userAbout">
             <div className="aboutMe">

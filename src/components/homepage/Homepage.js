@@ -17,7 +17,7 @@ class Homepage extends Component {
       <div className="topPosts">
           <p>Top Posts</p>
       </div>
-
+      
       <BlogShowcase blogs = {blogs}/>
         
     </main>

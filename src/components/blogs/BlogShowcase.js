@@ -28,7 +28,7 @@ class BlogShowcase extends Component{
                   <img onClick = {this.handlePrevious} src={leftArrow} alt=""/>
                 </div>
     
-                <Link to='/blogs/:id'><img src={blogs && blogs[this.state.index].url} alt=""/></Link>
+                <Link to='/blogs/:id'><img src={blogs && blogs[this.state.index].url || null} alt=""/></Link>
                 <h1>{blogs && blogs[this.state.index].title}</h1>
             
                 <div className="rightArrow">

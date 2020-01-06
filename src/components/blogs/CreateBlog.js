@@ -11,7 +11,8 @@ class CreateBlog extends Component {
         content: '',
         image: null,
         url: '',
-        likes: ''
+        likes: '',
+        progress: ''
     }
 
     handleChange = (e) => {
@@ -30,6 +31,7 @@ class CreateBlog extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.createBlog(this.state)
+        
         this.props.history.push('/');
         //console.log(this.props)
     }
@@ -41,6 +43,17 @@ class CreateBlog extends Component {
         
         uploadTask.on(
           "state_changed",
+          snapshot => {
+            // progress function ...
+            const progress = Math.round(
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            );
+            this.setState({ progress });
+          },
+          error => {
+            // Error function ...
+            console.log(error);
+          },
           () => {
             // complete function ...
             storage
@@ -80,6 +93,9 @@ class CreateBlog extends Component {
                             <div className="btn">
                                 <input type="file" id="image" onChange={this.handleImageChange} />
                             </div>
+                        </div>
+                        <div>
+                            <progress className='progress' value={this.state.progress} />
                         </div>
                         <button
                             onClick={this.handleUpload}

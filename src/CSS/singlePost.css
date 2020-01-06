@@ -40,3 +40,23 @@
   .container p{
     font-size: 35px;
   }
+
+  .likeBtn{
+
+    text-decoration: none;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0.7em;
+  }
+
+  .likeBtn:hover{
+    background-color: blue;
+    color: white;
+  }

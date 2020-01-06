@@ -28,7 +28,7 @@ class  BlogContent extends Component{
                                 <h1>{blog.title}</h1>
                             </div>
                             <h4>Posted by {blog.authorFirstName} {blog.authorLastName} {moment(blog.createdAt.toDate()).calendar()}</h4>
-                            <button onClick={this.handleLike}>Like</button>
+                            <button className='likeBtn' onClick={this.handleLike}>Like</button>
                             <p>{blog.content}</p>
                         </div>
                     </main>

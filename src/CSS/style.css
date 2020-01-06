@@ -54,10 +54,10 @@ nav{
   display: inline;
 }
 
-.navBar ul li:nth-child(3){
+/* .navBar ul li:nth-child(2){
   border-bottom: 3px solid #707070;
   text-decoration: none;
-}
+} */
 
 .login{
 
@@ -153,4 +153,11 @@ nav{
 
 .notificaitons ul li{
   list-style-type: none;
+}
+
+
+.active{
+  border-bottom: 3px solid #707070;
+  text-decoration: none;
+
 }
