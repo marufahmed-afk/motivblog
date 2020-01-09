@@ -19,7 +19,7 @@ class Homepage extends Component {
       </div>
       
       <BlogShowcase blogs = {blogs}/>
-        
+      
     </main>
     );
   }

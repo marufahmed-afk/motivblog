@@ -17,7 +17,7 @@ const blogReducer = (state = initState, action) => {
         case 'CREATE_BLOG_ERROR':
             console.log('create blog error', action.err);
             return state;
-        case 'ADD_LIKE':
+        case 'ADD_LIKE_SUCCESS':
             console.log('liked something maybe');
             return state;
         case 'ADD_LIKE_ERROR':

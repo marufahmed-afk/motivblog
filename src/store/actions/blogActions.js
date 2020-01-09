@@ -38,7 +38,7 @@ export const likeBlog = (blog,id) =>{
 
         firestore.collection('blogs')
             .doc(id) 
-            .set(updatedPost).then(() =>{dispatch({type:'ADD_LIKE', blog});
+            .set(updatedPost).then(() =>{dispatch({type:'ADD_LIKE_SUCCESS', blog});
                 }).catch((err) => {dispatch({type:'ADD_LIKE_ERROR', err});
             })
       };

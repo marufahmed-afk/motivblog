@@ -61,7 +61,6 @@ class SignUp extends Component {
                 console.log(this.state);
               });
           }
-          
         );
 
         this.setState(() => ({ image: imageName}));
@@ -92,7 +91,7 @@ class SignUp extends Component {
                             >
                             Upload
                         </button>
-                        <button type="submit">Sign Up</button>
+                        { this.state.url ? <button type="submit">Sign Up</button> : null}
                         <div>
                             { authError ? <p>{ authError }</p> : null}
                         </div>

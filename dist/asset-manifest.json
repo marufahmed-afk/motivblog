@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.15327a12.chunk.css",
+    "main.js": "/static/js/main.d517dab6.chunk.js",
+    "main.js.map": "/static/js/main.d517dab6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b0cf518e.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b0cf518e.js.map",
+    "static/js/2.9d3ac972.chunk.js": "/static/js/2.9d3ac972.chunk.js",
+    "static/js/2.9d3ac972.chunk.js.map": "/static/js/2.9d3ac972.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d81eae3408891179726c62d77acc1fec.js": "/precache-manifest.d81eae3408891179726c62d77acc1fec.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.15327a12.chunk.css.map": "/static/css/main.15327a12.chunk.css.map",
+    "static/js/2.9d3ac972.chunk.js.LICENSE": "/static/js/2.9d3ac972.chunk.js.LICENSE",
+    "static/media/blueCircle.svg": "/static/media/blueCircle.045ac313.svg",
+    "static/media/leftArrow.svg": "/static/media/leftArrow.d62ae36e.svg",
+    "static/media/rightArrow.svg": "/static/media/rightArrow.e2d0e91a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b0cf518e.js",
+    "static/js/2.9d3ac972.chunk.js",
+    "static/css/main.15327a12.chunk.css",
+    "static/js/main.d517dab6.chunk.js"
+  ]
+}

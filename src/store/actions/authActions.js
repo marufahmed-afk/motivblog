@@ -49,3 +49,29 @@ export const signUp = (newUser) => {
         })
     }
 }
+
+export const editAbout = (users, about) =>{ 
+
+    return (dispatch, getState)  => {
+        const signedInUser = getState().firebase.auth.uid
+
+        const user = users.find(user => {
+            
+            return user.id === signedInUser
+        })
+
+        console.log(user);
+        
+        const updatedAbout = {
+            ...user,
+            about: about
+        } 
+
+
+        firestore.collection('users')
+            .doc(signedInUser) 
+            .set(updatedAbout).then(() =>{dispatch({type:'EDIT_ABOUT_SUCCESS', about});
+                }).catch((err) => {dispatch({type:'EDIT_ABOUT_ERROR', err});
+            })
+    };
+}

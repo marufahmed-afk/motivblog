@@ -22,20 +22,32 @@ class BlogShowcase extends Component{
 
     render(){
         const { blogs, auth } = this.props;
-        return (
-            <div className="hero">
-                <div className="leftArrow">
-                  <img onClick = {this.handlePrevious} src={leftArrow} alt=""/>
+        if(blogs && blogs[0] != null){
+            return (
+                <div className="hero">
+                    <div className="leftArrow">
+                      <img onClick = {this.handlePrevious} src={leftArrow} alt=""/>
+                    </div>
+        
+                    <Link to={'/blogs/' + blogs[this.state.index].id} key= {blogs[this.state.index].id}><img src={blogs && blogs[this.state.index].url} alt=""/></Link>
+                    <h1>{blogs && blogs[this.state.index].title}</h1>
+                
+                    <div className="rightArrow">
+                        <img onClick = {this.handleNext} src={require("../../images/rightArrow.svg")} alt=""/>
+                    </div>
                 </div>
-    
-                <Link to='/blogs/:id'><img src={blogs && blogs[this.state.index].url || null} alt=""/></Link>
-                <h1>{blogs && blogs[this.state.index].title}</h1>
+            )
+        }
+        else{
+            return(
+                <div className="hero">
+                    <h1>No Blogs Yet!</h1>
+                </div>
+            )
             
-                <div className="rightArrow">
-                    <img onClick = {this.handleNext} src={require("../../images/rightArrow.svg")} alt=""/>
-                </div>
-            </div>
-        )
+        }
+
+        
     }
 
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import '../../CSS/profile.css'
 import CreateBlog from '../blogs/CreateBlog'
@@ -7,11 +7,34 @@ import { connect } from 'react-redux'
 import { compose } from 'redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { Redirect } from 'react-router-dom'
+import { editAbout } from '../../store/actions/authActions'
 
 
-function Profile(props) {
-    //console.log(props);
+
+const Profile = (props) => {
+
+    const [about, setAbout] = useState('')
+
+    const openForm = () => {
+        document.getElementById("about-form").style.display = "flex";
+    }
+    const closeForm = () => {
+        document.getElementById("about-form").style.display = "none";
+    }
+
+    const handleAbout = (e) => {
+        setAbout(e.target.value);
+        //console.log(e.target.value)
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.editAbout(props.users, about);
+    }
+    
+    console.log(props);
     const { blogs, users, auth } = props;
+
     
     if (!auth.uid) return <Redirect to='/login' />
     const user = users && users.find(user =>{
@@ -52,13 +75,26 @@ function Profile(props) {
             <div className="aboutMe">
                 <section>
                     <p id="aboutUser">About Me:</p>
-                    <p id="aboutMeText">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.</p>
+                    <button className='edit-btn' onClick={openForm}>+</button>
+                    <p id="aboutMeText">{user && user.about}</p>
                 </section>
-                
+                <div className='about-pop' id='about-form'>
+                    <form onSubmit={handleSubmit}>
+                        <textarea type="text" id="edit-text" onChange={handleAbout} />
+                        <button type="Submit" className="buttonBlue edit-form-button">Update</button>
+                    </form>  
+                    <button type="button" className="buttonBlue close-form-button" onClick={closeForm}>Close</button>
+                </div>
             </div>
         </div>
         </div>
     )
+}
+
+const mapDispatchToProps = (dispatch) =>{
+    return {
+        editAbout: (id,about) => dispatch(editAbout(id,about))
+    };
 }
 
 
@@ -71,7 +107,7 @@ const mapStateToProps = (state) =>{
 }
 
 export default compose(
-    connect(mapStateToProps),
+    connect(mapStateToProps,mapDispatchToProps),
     firestoreConnect([
         { collection: 'blogs' },
         { collection: 'users'}
